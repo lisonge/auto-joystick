@@ -14,8 +14,8 @@ def swtch_state():
     active = not active
 
 
-keyboard.add_hotkey("j", swtch_state)
-print("press 'j' to switch gamepad on/off")
+keyboard.add_hotkey("f2", swtch_state)
+print("press 'f2' to switch gamepad on/off")
 
 try:
     while True:
