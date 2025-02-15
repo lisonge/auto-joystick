@@ -5,6 +5,7 @@ import random
 
 print("macropad started")
 
+click_gap = 1
 active = False
 gamepad: vg.VX360Gamepad | None = None
 
@@ -12,7 +13,7 @@ gamepad: vg.VX360Gamepad | None = None
 def swtch_state():
     global active
     active = not active
-    print('\033[F\033[K', end='')
+    print("\033[F\033[K", end="")
     if active:
         print("gamepad on")
     else:
@@ -37,7 +38,7 @@ try:
             time.sleep(random.uniform(0.1, 0.5))
             gamepad.release_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
             gamepad.update()
-        time.sleep(2.5)
+        time.sleep(click_gap)
 except KeyboardInterrupt:
     pass
 
