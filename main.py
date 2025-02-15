@@ -12,6 +12,10 @@ gamepad: vg.VX360Gamepad | None = None
 def swtch_state():
     global active
     active = not active
+    if active:
+        print("gamepad on")
+    else:
+        print("gamepad off")
 
 
 keyboard.add_hotkey("f2", swtch_state)
@@ -22,12 +26,10 @@ try:
         if active:
             if gamepad is None:
                 gamepad = vg.VX360Gamepad()
-                print("gamepad on")
         else:
             if gamepad is not None:
                 del gamepad
                 gamepad = None
-                print("gamepad off")
         if gamepad is not None:
             gamepad.press_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
             gamepad.update()
