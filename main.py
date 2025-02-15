@@ -6,7 +6,7 @@ import random
 print("macropad started")
 
 active = False
-gamepad: vg.VDS4Gamepad | None = None
+gamepad: vg.VX360Gamepad | None = None
 
 
 def swtch_state():
@@ -21,7 +21,7 @@ try:
     while True:
         if active:
             if gamepad is None:
-                gamepad = vg.VDS4Gamepad()
+                gamepad = vg.VX360Gamepad()
                 print("gamepad on")
         else:
             if gamepad is not None:
