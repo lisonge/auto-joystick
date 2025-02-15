@@ -1,6 +1,7 @@
 import vgamepad as vg
 import time
 import keyboard
+import random
 
 print("macropad started")
 
@@ -28,10 +29,10 @@ try:
                 gamepad = None
                 print("gamepad off")
         if gamepad is not None:
-            gamepad.press_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_X)
+            gamepad.press_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
             gamepad.update()
-            time.sleep(0.1)
-            gamepad.release_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_X)
+            time.sleep(random.uniform(0.1, 0.5))
+            gamepad.release_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
             gamepad.update()
         time.sleep(2.5)
 except KeyboardInterrupt:
