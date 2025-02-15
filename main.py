@@ -5,7 +5,7 @@ import random
 
 print("macropad started")
 
-click_gap = 1
+click_gap = 0.2
 active = False
 gamepad: vg.VX360Gamepad | None = None
 
@@ -35,7 +35,7 @@ try:
         if gamepad is not None:
             gamepad.press_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
             gamepad.update()
-            time.sleep(random.uniform(0.1, 0.5))
+            time.sleep(random.uniform(0.05, 0.1))
             gamepad.release_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
             gamepad.update()
         time.sleep(click_gap)
