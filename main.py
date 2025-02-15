@@ -12,6 +12,7 @@ gamepad: vg.VX360Gamepad | None = None
 def swtch_state():
     global active
     active = not active
+    print('\033[F\033[K', end='')
     if active:
         print("gamepad on")
     else:
@@ -19,7 +20,7 @@ def swtch_state():
 
 
 keyboard.add_hotkey("f2", swtch_state)
-print("press 'f2' to switch gamepad on/off")
+print("press 'f2' to switch gamepad on/off\n")
 
 try:
     while True:
